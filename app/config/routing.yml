@@ -1,0 +1,6 @@
+stocks_achat:
+    resource: "@StocksAchatBundle/Controller/"
+    type:     annotation
+    prefix:   /
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,32 @@
+{% extends "::layout.html.twig" %}
+
+
+
+{% block body %}
+  {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+<a href="{{ path('contact_demande') }}">Créer une nouvelle fiche</a><br /><br />
+{% endif %}
+        <hr />
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th> Nom de l'émetteur </th>
+            <th>Date d'émission de la demande</th>
+            <th>L'adresse de livraison</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+        <tr>
+            <th scope="row">{{ demande.id }}</th>
+            <td>{{ demande.nomEmetteur }}</td>
+            <td>{{ demande.numDemande }}</td>
+            <td>{{ demande.adresseLivraison }}</td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+<div class="panel panel-primary" xmlns="http://www.w3.org/1999/html">
+        <div class="panel-body">
+            <div class="form-group">
+                <h2>Demande d'achtas</h2>
+            </div>
+            <form action="{{ path("contact_demande") }}" method="post">
+                {{ form_widget(form._token) }}
+            <div class="form-group">
+
+                <label class="control-label" for="nomEmetteur">{{ form_label(form.nomEmetteur) }}</label>
+                {{ form_widget(form.nomEmetteur, {'attr':{'class': 'form-control' }} ) }}
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="numDemande">{{ form_label(form.numDemande) }}</label>
+                {{ form_widget(form.numDemande, {'attr':{'class': 'form-control' }} ) }}
+            </div>
+                <div class="form-group">
+
+                    <label class="control-label" for="objetDemande">{{ form_label(form.objetDemande) }}</label>
+                    {{ form_widget(form.objetDemande, {'attr':{'class': 'form-control' }} ) }}
+                </div>
+            <div class="form-group">
+
+                <label class="control-label" for="dateEmission">{{ form_label(form.dateEmission) }}</label>
+                {{ form_widget(form.dateEmission, {'attr':{'class': 'form-control' }} ) }}
+
+            </div>
+            <div class="form-group">
+
+                    <label class="control-label" for="adresseLivraison">{{ form_label(form.adresseLivraison) }}</label>
+                    {{ form_widget(form.adresseLivraison, {'attr':{'class': 'form-control' }} ) }}
+
+            </div>
+
+                <br /><br />
+                {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+        </form>
+        </div>
+
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{  asset('bundles/stocksachat/js/main.js') }}"></script>
+{% endblock %}
